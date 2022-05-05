@@ -6,4 +6,5 @@ RUN micromamba install -y -f /tmp/env.yaml && \
     micromamba clean --all --yes
 	
 RUN groupadd docker \
-	&& usermod -aG docker $MAMBA_USER
+	&& usermod -aG docker $MAMBA_USER \
+    && usermod -aG docker root
