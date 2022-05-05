@@ -1,0 +1,19 @@
+name: base
+
+channels:
+  - conda-forge
+  
+dependencies:
+  - python
+  - pip
+  - pybind11
+  - cmake
+  - ninja
+  - cxx-compiler
+  - numpy 
+  - scipy
+  - scikit-build
+  - jupyter
+  - matplotlib
+  - conda-build
+  - conda-verify
