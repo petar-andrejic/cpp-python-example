@@ -1,17 +1,17 @@
-add_library(example INTERFACE)
+add_library(${PKG_NAME} INTERFACE)
 
-add_library(example::example ALIAS example)
+add_library(${PKG_NAME}::${PKG_NAME} ALIAS ${PKG_NAME})
 
-target_compile_features(example INTERFACE cxx_std_17)
+target_compile_features(${PKG_NAME} INTERFACE cxx_std_17)
 
-target_include_directories(example
+target_include_directories(${PKG_NAME}
     INTERFACE
         $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
-install(TARGETS example EXPORT exampleTargets)
+install(TARGETS ${PKG_NAME} EXPORT ${PKG_NAME}Targets)
 
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/example
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/${PKG_NAME}
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} COMPONENT headers
     PATTERN "CMakeLists.txt" EXCLUDE)

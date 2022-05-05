@@ -2,9 +2,9 @@
 @PACKAGE_INIT@
 
 # Include the cmake targets of the project if they have not been yet.
-if(NOT TARGET example::example)
-    include("@PACKAGE_EXAMPLE_INSTALL_CONFIGDIR@/exampleTargets.cmake")
+if(NOT TARGET ${PKG_NAME}::${PKG_NAME})
+    include("@PACKAGE_EXAMPLE_INSTALL_CONFIGDIR@/${PKG_NAME}Targets.cmake")
 endif()
 
 # Recommended check at the end of a cmake config file.
-check_required_components(example)
+check_required_components(${PKG_NAME})
